@@ -3,6 +3,7 @@ import os
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from groq import Groq
 
@@ -25,6 +26,14 @@ app = FastAPI(
     title="Guarded AI Math Tutor",
     description="A prototype comparing direct AI assistance with guided tutoring.",
     version="0.1.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
 )
 
 

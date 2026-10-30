@@ -101,6 +101,7 @@ textarea:focus-visible {
   width: min(760px, 92%);
   margin: 0 auto;
   padding: 46px 0 28px;
+  color:black
 }
 
 .eyebrow {
@@ -418,5 +419,125 @@ textarea:focus-visible {
 
   .composer-footer > span {
     max-width: 160px;
+  }
+}
+
+/* Color rendering fixes */
+:root {
+  color-scheme: light;
+  --page-bg: #f6f7fb;
+  --surface: #ffffff;
+  --text-primary: #242438;
+  --text-secondary: #77798e;
+  --accent: #6555dc;
+  --accent-hover: #5142c5;
+  --accent-soft: #f0efff;
+  --border-color: #e8e8f0;
+  --success: #23845f;
+  --warning: #a66b18;
+  --error: #b23c36;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--page-bg);
+}
+
+.topbar,
+.mode,
+.chat-panel {
+  background-color: var(--surface);
+}
+
+.brand h1,
+.intro h2,
+.chat-heading h3,
+.sender {
+  color: var(--text-primary);
+}
+
+.brand p,
+.subtitle,
+.chat-heading p,
+.message-text {
+  color: var(--text-secondary);
+}
+
+.mode.active {
+  background-color: var(--accent-soft);
+  border-color: #7769e9;
+}
+
+.mode-icon {
+  color: var(--accent);
+  background-color: var(--surface);
+}
+
+.mode-tag {
+  color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+.send-button {
+  color: #ffffff;
+  background-color: var(--accent);
+}
+
+.send-button:hover {
+  background-color: var(--accent-hover);
+}
+
+.passed {
+  color: var(--success);
+}
+
+.fallback {
+  color: var(--warning);
+}
+
+.neutral {
+  color: #6d64bc;
+}
+
+.error {
+  color: var(--error);
+  background-color: #fff0ef;
+}
+
+.composer {
+  background-color: #fcfcfe;
+}
+
+.composer textarea {
+  color: var(--text-primary);
+  background-color: transparent;
+}
+
+.composer textarea::placeholder {
+  color: #85859a;
+  opacity: 1;
+}
+
+.connection {
+  color: #62647b;
+  background-color: #f5f5fa;
+}
+
+.disclaimer,
+.composer-footer > span {
+  color: #77798e;
+}
+
+.status-dot {
+  background-color: #28a879;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
