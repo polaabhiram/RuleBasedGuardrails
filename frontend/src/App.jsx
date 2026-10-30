@@ -210,10 +210,7 @@ export default function App() {
           </form>
         </section>
 
-        <p className="disclaimer">
-          Research prototype. Tutor behavior and basic guardrail
-          checks are experimental, not guaranteed protections.
-        </p>
+        
       </section>
     </main>
   );
